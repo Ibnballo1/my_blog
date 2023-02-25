@@ -24,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [OOP_School_Library] <a name="about-project"></a>
+# 📖 [Blog_App] <a name="about-project"></a>
 
-**[OOP_School_Library]** is a project aimed at building a school library app. In this initial step, I implemented the classes to represent students and teachers.
+**[Blog_App]** A project where we create a blog app using MVC and Rail.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -37,23 +37,18 @@
   <ul>
     <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
   </ul>
+  <ul>
+    <li><a href="https://www.rubyonrails.org.org/en/">Ruby)nRails</a></li>
+  </ul>
 </details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add class Person as the parent class]**
-- **[Add class Student as a child class of Parent class]**
-- **[Add class Teacher as a child class of Parent class]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link](#)
+- **[Add Comments]**
+- **[Add a post]**
+- **[Like a post]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,14 +61,28 @@ To get a local copy up and running, follow these steps.
 ### Prerequisites
 
 In order to run this project you need:
+    - nstall ruby on your computer or run it with docker
+    - Have rails installed on your computer
 
 ### Setup
 
 Clone this repository to your desired folder:
-git@github.com:Ibnballo1/oop_school_library.git
+git@github.com:Ibnballo1/my_blog.git
 
-Then cd into oop_school_library
+Then cd into my_blog
 
+### Install
+
+Install this project with:
+
+`bundle install`
+
+### Usage
+To run the project, execute the following command:
+
+`rails s`
+
+NB: You need to create an env file for your database credentials
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,9 +101,7 @@ Then cd into oop_school_library
 <!-- FUTURE FEATURE -->
 ## 👥 Future Features <a name="future-features"></a>
 
-- Add new students or teachers.
-- Add new books.
-- Save records of who borrowed a given book and when.
+- Delete Post
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -104,7 +111,7 @@ Then cd into oop_school_library
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Ibnballo1/oop_school_library/issues).
+Feel free to check the [issues page](https://github.com/Ibnballo1/my_blog/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

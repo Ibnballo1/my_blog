@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :comments
 
+  validates :author, presence: true
   validates :title, presence: true
   validates :text, presence: true
   validates :commentscounter, presence: true

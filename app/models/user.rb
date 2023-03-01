@@ -10,6 +10,6 @@ class User < ApplicationRecord
 
   def self.three_most_recent_posts(author)
     user = User.find_by(name: author)
-    user.posts.order(created_at: :desc).limit(3)
+    user.posts.order(created_at: :desc).limit(3).to_a
   end
 end

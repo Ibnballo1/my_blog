@@ -7,4 +7,8 @@ class User < ApplicationRecord
   validates :photo, presence: true
   validates :bio, presence: true
   validates :postscounter, presence: true
+
+  def three_most_recent_posts(user)
+    user.posts.order(created_at: :desc).limit(3)
+  end
 end

@@ -2,9 +2,11 @@ class Like < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
   belongs_to :post
 
-  def self.update_like_counter(id)
-    post = Post.find_by(id:)
-    post.likescounter = post.likes.count
-    post.save
+  after_save :update_like_counter
+
+  private
+
+  def update_like_counter
+    post.increment!(:likescounter)
   end
 end

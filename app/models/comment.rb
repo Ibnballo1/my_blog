@@ -5,6 +5,6 @@ class Comment < ApplicationRecord
   validates :text, presence: true
 
   def update_comments_counter
-    post.increment!(:comments_counter)
+    post.increment!(:commentscounter)
   end
 end

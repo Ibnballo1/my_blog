@@ -5,5 +5,6 @@ class Like < ActiveRecord::Base
   def self.update_like_counter(id)
     post = Post.find_by(id:)
     post.likescounter = post.likes.count
+    post.save
   end
 end

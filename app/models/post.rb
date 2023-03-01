@@ -12,6 +12,7 @@ class Post < ApplicationRecord
   def self.update_post_counter(author)
     user = User.find_by(name: author)
     user.postscounter = user.posts.count
+    user.save
   end
 
   def self.five_most_recent_comment(title)

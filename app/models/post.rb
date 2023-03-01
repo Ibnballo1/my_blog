@@ -11,9 +11,8 @@ class Post < ApplicationRecord
 
   after_save :update_post_counter
 
-  def self.five_most_recent_comment(title)
-    post = Post.find_by(title:)
-    post.comments.order(created_at: :desc).limit(5)
+  def five_most_recent_comment
+    comments.order('created_at desc').limit(5)
   end
 
   private

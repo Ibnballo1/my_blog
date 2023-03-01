@@ -61,7 +61,7 @@ To get a local copy up and running, follow these steps.
 ### Prerequisites
 
 In order to run this project you need:
-    - nstall ruby on your computer or run it with docker
+    - install ruby on your computer or run it with docker
     - Have rails installed on your computer
 
 ### Setup

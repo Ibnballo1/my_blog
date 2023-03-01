@@ -3,4 +3,8 @@ class Comment < ApplicationRecord
   belongs_to :post
 
   validates :text, presence: true
+
+  def comment_counter(post)
+    post.commentscounter.count
+  end
 end

@@ -8,7 +8,8 @@ class User < ApplicationRecord
   validates :bio, presence: true
   validates :postscounter, presence: true
 
-  def three_most_recent_posts(user)
+  def self.three_most_recent_posts(author)
+    user = User.find_by(name: author)
     user.posts.order(created_at: :desc).limit(3)
   end
 end

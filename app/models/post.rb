@@ -9,11 +9,13 @@ class Post < ApplicationRecord
   validates :commentscounter, presence: true
   validates :likescounter, presence: true
 
-  def update_post_counter(user)
-    user.author.postscounter = user.author.posts.count
+  def self.update_post_counter(author)
+    user = User.find_by(name: author)
+    user.postscounter = user.posts.count
   end
 
-  def five_most_recent_comment(post)
+  def self.five_most_recent_comment(title)
+    post = Post.find_by(title:)
     post.comments.order(created_at: :desc).limit(5)
   end
 end

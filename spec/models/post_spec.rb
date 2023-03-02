@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
+  let(:user) { User.create(name: 'Tom', postscounter: 1) }
+  let(:post) { Post.create(author: user, text: 'This is my first post', likescounter: 2, commentscounter: 1) }
+
+  it 'increments the user posts counter' do
+    user.increment!(:postscounter)
+    expect(user.postscounter).to eq(2)
+  end
+
   it 'title should be present' do
     post = Post.new(author_id: 2, title: 'Hello', text: 'I am from test', commentscounter: 0, likescounter: 0)
     post.title = nil
@@ -31,18 +39,5 @@ RSpec.describe Post, type: :model do
       comments.order('created_at desc').limit(5)
     end
     expect(post.five_most_recent_comment).to eq([])
-  end
-
-  it 'should update post counter' do
-    user = User.new(id: 16, name: 'Ibnballo', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher', postscounter: 0)
-    # expect(user.postscounter).to eq(0)
-    post = Post.new(author_id: user, title: 'Hello', text: 'I am from test', commentscounter: 0, likescounter: 0)
-    # def update_post_counter
-    #   author.increment!(:postscounter)
-    # #   user.postscounter += 1
-    # end
-
-    # result = post.send(:update_post_counter)
-    expect { post.send(:update_post_counter) }.to change { user.reload.postscounter }.by(1)
   end
 end

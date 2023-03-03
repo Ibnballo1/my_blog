@@ -1,6 +1,5 @@
 class AddForeignKeyToUsers < ActiveRecord::Migration[7.0]
   def change
-    add_reference :users, :post, null: false, foreign_key: true
-    add_column :users, :posts_counter, :integer
+    add_foreign_key :users, :posts, column: :posts_counter
   end
 end

@@ -3,5 +3,8 @@ class AddForeignKeyAndIndexToPosts < ActiveRecord::Migration[7.0]
     add_foreign_key :posts, :users, column: :author_id
     add_foreign_key :posts, :comments, column: :comments_counter
     add_foreign_key :posts, :likes, column: :likes_counter
+    add_index :posts, :authorid
+    add_index :posts, :commentscounter
+    add_index :posts, :likescounter
   end
 end

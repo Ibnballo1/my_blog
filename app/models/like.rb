@@ -7,6 +7,6 @@ class Like < ActiveRecord::Base
   private
 
   def update_like_counter
-    post.increment!(:likescounter)
+    post.increment!(:likes_counter)
   end
 end

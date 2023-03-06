@@ -4,8 +4,11 @@ class UsersController < ApplicationController
     @user = User.all
   end
 
-  # To Show a specific user
+  # To get a specific user and
+  # to get a post from a particular user
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts
+    @post = @posts.id
   end
 end

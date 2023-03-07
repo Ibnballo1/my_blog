@@ -11,8 +11,8 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('index')
     end
 
-  #   it 'shows correct body placeholder' do
-  #     expect(response.body).to include('Here is a list of all posts of a certain user')
-  #   end
+    it 'shows correct body placeholder' do
+      expect(response.body).to include('Here is a list of all users')
+    end
   end
 end

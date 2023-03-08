@@ -26,7 +26,7 @@ RSpec.describe 'Users', type: :request do
       )
       get "/users/#{@user.id}"
     end
-  
+
     it 'is correct' do
       expect(response).to have_http_status(200)
     end

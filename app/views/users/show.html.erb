@@ -1,1 +1,9 @@
-<p><%= 'Here is a user with this id'%></p>
+<div id='user'>
+  <div><%= @user.photo%></div>
+  <h1><%= @user.name -%></h1>
+  <p>Number of posts: <%= @user.posts_counter%></p>
+  <div class='bio'>
+    <h4>Bio</h4>
+    <p><%= @user.bio %></p>
+  </div>
+</div>

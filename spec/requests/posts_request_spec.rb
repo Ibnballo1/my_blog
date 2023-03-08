@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'posts#index' do
-    # before(:example) { get posts_path }
     before :each do
       @user = User.create(
         name: 'Keenan',

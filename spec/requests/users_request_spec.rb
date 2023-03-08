@@ -17,7 +17,6 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'users#show' do
-    # user = User.find(18)
     before :each do
       @user = User.create(
         name: 'Keenan',

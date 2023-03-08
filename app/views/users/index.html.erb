@@ -6,7 +6,7 @@
     <% @users.each do |i| %>
     <div><%= i.photo%></div>
     <h1><%= link_to i.name, {:action => 'show', :id => i.id} -%></h1>
-    <p><%= i.posts_counter%></p>
+    <p>Number of posts: <%= i.posts_counter%></p>
     <% end %>
   </div>
 </body>

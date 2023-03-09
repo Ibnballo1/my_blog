@@ -3,10 +3,10 @@
 <head></head>
 <body>
   <div id='users'>
-    <% @users.each do |i| %>
-    <div><%= i.photo%></div>
-    <h1><%= link_to i.name, {:action => 'show', :id => i.id} -%></h1>
-    <p>Number of posts: <%= i.posts_counter%></p>
+    <% @users.each do |user| %>
+      <%= link_to "/users/#{user.id}" do %>
+        <%= render "partials/user_box", user: user %>
+      <% end %>
     <% end %>
   </div>
 </body>

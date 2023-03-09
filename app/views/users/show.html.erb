@@ -7,3 +7,22 @@
     <p><%= @user.bio %></p>
   </div>
 </div>
+
+<div id='posts'>
+  <% @posts.each_with_index do |p, index| %>
+    <% if @user.id === p.author_id %>
+      <div id='post'>
+        <h4>Post #<%= index + 1 %></h4>
+        <p class='text'><%= p.text %></p>
+        <p class='comments'>Comments: <%= p.comments_counter %></p>
+        <p class='likes'>Likes: <%= p.likes_counter %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div id='allposts'>
+  <%= link_to "/users/#{@user.id}/posts" do %>
+    <button>See all post</button>
+  <% end %>
+</div>

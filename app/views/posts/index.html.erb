@@ -4,30 +4,34 @@
 <body>
 
   <%# Get the user %>
-  <div id='user_box'>
-    <img src=<%= @users.photo %> alt='pic'>
-    <div class='container'>
-      <h1><%= @users.name %></h1>
-      <p>Number of posts: <%= @users.posts_counter%></p>
+  <section id='user_box'>
+    <img class='image' src=<%= @users.photo %> alt='profile picture'>
+    <div class='user_name'>
+      <h1 class='name'><%= @users.name %></h1>
+      <p class='posts_counter'>Number of posts: <%= @users.posts_counter%></p>
     </div>
-  </div>
+  </section>
 
   <%# Get the posts of the particular user %>
   <% @posts.each do |post| %>
-    <div class='post_container'>
-      <div id='post'>
-        <h4><%= link_to post.title, "/users/#{@users.id}/posts/#{post.id}" %></h4>
+    <section id='post' class='post'>
+      <h4><%= link_to post.title, "/users/#{@users.id}/posts/#{post.id}" %></h4>
+      <div class='texts'>
         <p class='text'><%= post.text %></p>
-        <p class='comments'>Comments: <%= post.comments_counter %></p>
-        <p class='likes'>Likes: <%= post.likes_counter %></p>
+        <div class='comlik'>
+          <p>
+            <span class='comments'>Comments: <%= post.comments_counter %></span>,
+            <span class='likes'>Likes: <%= post.likes_counter %></span>
+          </p>
+        </div>
       </div>
-      <div class='comments'>
+    </section>
+    <section class='comment post'>
         <p class='no_post'> <%= 'There is no comment for this post' if post.comments.length === 0 %></p>
         <% post.five_most_recent_comment.each do |comment| %>
           <p class='user_comment'><%= comment.author.name %>: <%= comment.text %></p>
         <% end %>
-      </div>
-    </div>
+    </section>
   <% end %>
 
   <%# Pagination %>

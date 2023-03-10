@@ -16,7 +16,7 @@
   <% @posts.each do |post| %>
     <div class='post_container'>
       <div id='post'>
-        <h4><%= post.title %></h4>
+        <h4><%= link_to post.title, "/users/#{@users.id}/posts/#{post.id}" %></h4>
         <p class='text'><%= post.text %></p>
         <p class='comments'>Comments: <%= post.comments_counter %></p>
         <p class='likes'>Likes: <%= post.likes_counter %></p>

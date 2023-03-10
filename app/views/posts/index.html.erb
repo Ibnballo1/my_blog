@@ -2,6 +2,37 @@
 <html>
 <head></head>
 <body>
-  <p><%= 'Here is a list of all posts of a certain user'%></p>
+
+  <%# Get the user %>
+  <div id='user_box'>
+    <img src=<%= @users.photo %> alt='pic'>
+    <div class='container'>
+      <h1><%= @users.name %></h1>
+      <p>Number of posts: <%= @users.posts_counter%></p>
+    </div>
+  </div>
+
+  <%# Get the posts of the particular user %>
+  <% @posts.each do |post| %>
+    <div class='post_container'>
+      <div id='post'>
+        <h4><%= post.title %></h4>
+        <p class='text'><%= post.text %></p>
+        <p class='comments'>Comments: <%= post.comments_counter %></p>
+        <p class='likes'>Likes: <%= post.likes_counter %></p>
+      </div>
+      <div class='comments'>
+        <p class='no_post'> <%= 'There is no comment for this post' if post.comments.length === 0 %></p>
+        <% post.five_most_recent_comment.each do |comment| %>
+          <p class='user_comment'><%= comment.author.name %>: <%= comment.text %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%# Pagination %>
+  <div class='pagination'>
+    <button>Pagination</button>
+  </div>
 </body>
 </html>

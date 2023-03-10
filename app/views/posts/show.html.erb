@@ -1,1 +1,19 @@
-<p>Here is a user's post with this id</p>
+<section class='each-post'>
+  <div class='post-head'>
+    <h4><%= @post.title %> <span class='post-head-span'>by <%= @post.author.name %></span></h4>
+    <div class='commentlike'>
+      <p>
+        <span class='comment'>Comments: <%= @post.comments_counter %></span>,
+        <span class='like'>Likes: <%= @post.likes_counter %></span>
+      </p>
+    </div>
+  </div>
+  <div class='content'>
+    <p><%= @post.text %></p>
+  </div>
+</section>
+<section class='allcomment'>
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.author.name %>: <%= comment.text %></p>
+  <% end %>
+</section>

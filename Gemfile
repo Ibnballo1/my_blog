@@ -44,6 +44,8 @@ gem 'bootsnap', require: false
 
 gem 'factory_bot_rails'
 
+gem 'rails-controller-testing'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

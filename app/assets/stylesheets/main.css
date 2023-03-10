@@ -3,10 +3,12 @@
   margin: 0;
 }
 
-#user_box {
+#user_box,
+.bio {
   margin: 1rem;
   padding: 1rem;
   display: flex;
+  border: 2px solid red;
 }
 
 .image {
@@ -22,11 +24,33 @@
   margin-left: 3rem;
 }
 
-.name {
-  border: 2px solid purple;
-}
-
 .posts_counter {
   align-self: flex-end;
   margin-left: 3rem;
+}
+
+.bio,
+#posts {
+  flex-direction: column;
+}
+
+.bio h4 {
+  margin-bottom: 1.5rem;
+}
+
+#post {
+  border: 2px solid green;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.texts {
+  margin-top: 2rem;
+}
+
+.comlik {
+  margin-top: 0.25rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: end;
 }

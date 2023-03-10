@@ -1,25 +1,35 @@
-<div id='user'>
-  <div><%= @user.photo%></div>
-  <h1><%= @user.name -%></h1>
-  <p>Number of posts: <%= @user.posts_counter%></p>
-  <div class='bio'>
-    <h4>Bio</h4>
-    <p><%= @user.bio %></p>
-  </div>
-</div>
+<%= stylesheet_link_tag 'main.css' %>
 
-<div id='posts'>
+<section id='user_box'>
+  <img class='image' src=<%= @user.photo %> alt='profile picture' />
+  <div class='user_name'>
+    <h1 class='name'><%= @user.name %></h1>
+    <p class='posts_counter'>Number of posts: <%= @user.posts_counter%></p>
+  </div>
+</section>
+<section class='bio'>
+  <h4>Bio</h4>
+  <p><%= @user.bio %></p>
+</section>
+
+<section id='posts'>
   <% @posts.each_with_index do |p, index| %>
     <% if @user.id === p.author_id %>
-      <div id='post'>
+      <article id='post'>
         <h4>Post #<%= index + 1 %></h4>
-        <p class='text'><%= p.text %></p>
-        <p class='comments'>Comments: <%= p.comments_counter %></p>
-        <p class='likes'>Likes: <%= p.likes_counter %></p>
-      </div>
+        <div class='texts'>
+          <p class='text'><%= p.text %></p>
+          <div class='comlik'>
+            <p>
+              <span class='comments'>Comments: <%= p.comments_counter %></span>,
+              <span class='likes'>Likes: <%= p.likes_counter %></span>
+            </p>
+          </div>
+        </div>
+      </article>
     <% end %>
   <% end %>
-</div>
+</section>
 
 <div id='allposts'>
   <%= link_to "/users/#{@user.id}/posts" do %>

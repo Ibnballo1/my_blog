@@ -11,21 +11,19 @@
 </section>
 
 <section id='posts'>
-  <% @posts.each_with_index do |p, index| %>
-    <% if @user.id === p.author_id %>
-      <article id='post'>
-        <h4>Post #<%= index + 1 %></h4>
-        <div class='texts'>
-          <p class='text'><%= p.text %></p>
-          <div class='comlik'>
-            <p>
-              <span class='comments'>Comments: <%= p.comments_counter %></span>,
-              <span class='likes'>Likes: <%= p.likes_counter %></span>
-            </p>
-          </div>
+  <% @user.three_most_recent_posts.each do |recent_post| %>
+    <article id='post'>
+      <h4><%= recent_post.title %></h4>
+      <div class='texts'>
+        <p class='text'><%= recent_post.text %></p>
+        <div class='comlik'>
+          <p>
+            <span class='comments'>Comments: <%= recent_post.comments_counter %></span>,
+            <span class='likes'>Likes: <%= recent_post.likes_counter %></span>
+          </p>
         </div>
-      </article>
-    <% end %>
+      </div>
+    </article>
   <% end %>
 </section>
 

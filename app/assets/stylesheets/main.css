@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#user_box {
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+}
+
+.image {
+  border: 2px solid green;
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.user_name {
+  border: 2px solid red;
+  display: flex;
+  padding: 1.5rem;
+  margin-left: 3rem;
+}
+
+.name {
+  border: 2px solid purple;
+}
+
+.posts_counter {
+  align-self: flex-end;
+  margin-left: 3rem;
+}

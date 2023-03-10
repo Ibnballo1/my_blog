@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+  <%= stylesheet_link_tag 'main.css' %>
+</head>
 <body>
-  <div id='users'>
+  <main id='users'>
     <% @users.each do |user| %>
       <%= link_to "/users/#{user.id}" do %>
-        <div id='user_box'>
-        <img src=<%= user.photo %> alt='pic'>
-        <div class='container'>
-          <h1><%= user.name %></h1>
-          <p>Number of posts: <%= user.posts_counter%></p>
-        </div>
-      </div>
+        <section id='user_box'>
+          <img class='image' src=<%= user.photo %> alt='profile picture' />
+          <div class='user_name'>
+            <h1 class='name'><%= user.name %></h1>
+            <p class='posts_counter'>Number of posts: <%= user.posts_counter%></p>
+          </div>
+        </section>
       <% end %>
     <% end %>
-  </div>
+  </main>
 </body>
 </html>

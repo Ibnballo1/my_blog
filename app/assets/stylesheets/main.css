@@ -63,8 +63,8 @@
   margin-bottom: 2rem;
 }
 
-#allposts button,
-.pagination button {
+.pagination button,
+#allposts button {
   padding: 0.5rem;
   font-weight: bold;
 }

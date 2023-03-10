@@ -68,3 +68,20 @@
   padding: 0.5rem;
   font-weight: bold;
 }
+
+.each-post,
+.allcomment {
+  border: 2px solid #000;
+  padding: 1rem;
+  margin: 0.5rem 2rem 0 2rem;
+}
+
+.post-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 2rem 0;
+}
+
+.post-head-span {
+  font-weight: 300;
+}

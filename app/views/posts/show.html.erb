@@ -1,16 +1,16 @@
-<p>Here is a user's post with this id</p>
-<p>I am now in the show action</p>
 <section class='each-post'>
-  <p><%= @post.title %> <span>by <%= @post.author.name %></span></p>
-  <div class='commentlike'>
-    <p>
-      <span class='comment'>Comments: <%= @post.comments_counter %></span>,
-      <span class='like'>Likes: <%= @post.likes_counter %></span>
-    </p>
+  <div class='post-head'>
+    <h4><%= @post.title %> <span class='post-head-span'>by <%= @post.author.name %></span></h4>
+    <div class='commentlike'>
+      <p>
+        <span class='comment'>Comments: <%= @post.comments_counter %></span>,
+        <span class='like'>Likes: <%= @post.likes_counter %></span>
+      </p>
+    </div>
   </div>
-  <article class='content'>
+  <div class='content'>
     <p><%= @post.text %></p>
-  </article>
+  </div>
 </section>
 <section class='allcomment'>
   <% @post.comments.each do |comment| %>

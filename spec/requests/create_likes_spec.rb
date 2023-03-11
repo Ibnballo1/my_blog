@@ -1,18 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "CreateLikes", type: :request do
-  describe "GET /new" do
-    it "returns http success" do
-      get "/create_likes/new"
+RSpec.describe 'CreateLikes', type: :request do
+  describe 'GET /new' do
+    it 'returns http success' do
+      get '/create_likes/new'
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /create" do
-    it "returns http success" do
-      get "/create_likes/create"
+  describe 'GET /create' do
+    it 'returns http success' do
+      get '/create_likes/create'
       expect(response).to have_http_status(:success)
     end
   end
-
 end

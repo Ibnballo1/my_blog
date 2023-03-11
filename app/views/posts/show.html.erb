@@ -1,1 +1,25 @@
-<p>Here is a user's post with this id</p>
+<section class='each-post'>
+  <div class='post-head'>
+    <h4><%= @post.title %> <span class='post-head-span'>by <%= @post.author.name %></span></h4>
+    <div class='commentlike'>
+      <p>
+        <span class='comment'>Comments: <%= @post.comments_counter %></span>,
+        <span class='like'>Likes: <%= @post.likes_counter %></span>
+      </p>
+    </div>
+  </div>
+  <div class='content'>
+    <p><%= @post.text %></p>
+  </div>
+</section>
+<section class='allcomment'>
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.author.name %>: <%= comment.text %></p>
+  <% end %>
+  <div>
+    <button><%= link_to 'Add New Comment', "/users/#{@user.id}/posts/#{@post.id}/comments/new" %></button>
+  </div>
+  <%= form_with url: "/users/#{@user.id}/posts/#{@post.author_id}/likes" do |form| %>
+    <%= form.submit 'Like' %>
+  <%end%>
+</section>

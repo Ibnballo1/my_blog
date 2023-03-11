@@ -8,5 +8,6 @@ class UsersController < ApplicationController
   # to get a post from a particular user
   def show
     @user = User.find(params[:id])
+    @posts = Post.all
   end
 end

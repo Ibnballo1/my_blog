@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+  <%= stylesheet_link_tag 'main.css' %>
+</head>
 <body>
-  <p>Here is a list of all users</p>
+  <main id='users'>
+    <% @users.each do |user| %>
+      <%= link_to "/users/#{user.id}" do %>
+        <section id='user_box'>
+          <img class='image' src=<%= user.photo %> alt='profile picture' />
+          <div class='user_name'>
+            <h1 class='name'><%= user.name %></h1>
+            <p class='posts_counter'>Number of posts: <%= user.posts_counter%></p>
+          </div>
+        </section>
+      <% end %>
+    <% end %>
+  </main>
 </body>
 </html>

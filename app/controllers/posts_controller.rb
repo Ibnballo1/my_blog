@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    @comments = @post.five_most_recent_comment
   end
 
   def new
@@ -26,6 +28,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text, :comments_counter, :likes_counter)
   end
 end

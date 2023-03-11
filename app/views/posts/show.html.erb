@@ -16,4 +16,7 @@
   <% @post.comments.each do |comment| %>
     <p><%= comment.author.name %>: <%= comment.text %></p>
   <% end %>
+  <%= form_with url: "/users/#{@user.id}/posts/#{@post.author_id}/likes" do |form| %>
+    <%= form.submit 'Like' %>
+  <%end%>
 </section>

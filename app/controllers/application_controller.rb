@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
   def current_user
-    @users = User.first
+    User.first
   end
 end

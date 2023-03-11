@@ -11,17 +11,13 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-
-    respond_to do |format|
-      format.html { render :new, locals: { post: @post } }
-    end
   end
 
   def create
-    @post = Post.create
+    @post = current_user.posts.new(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to user_posts_path(current_user)
     else
       render 'new'
     end

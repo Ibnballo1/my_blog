@@ -1,1 +1,7 @@
 <h1>I will create a new form</h1>
+<h2>Add New Post</h2>
+<%= form_with model: @posts, url: user_posts_path(current_user), method: :post, local: true, scope: :post do |form| %>
+  <%= form.text_field :title, class: 'title', placeholder: 'Post Title' %>
+  <%= form.text_area :text, class: 'text', placeholder: 'Your Post', size: "60x10" %>
+  <%= form.submit 'Create', class: 'form_btn' %>
+<% end %>

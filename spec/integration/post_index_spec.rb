@@ -11,14 +11,50 @@ RSpec.describe 'User Post Index', type: :system do
     it 'should show all posts for a user' do
       visit user_posts_path(@user)
       expect(page).to have_selector('img')
+    end
+
+    it 'should show username' do
+      visit user_posts_path(@user)
       expect(page).to have_content('Ibnballo')
+    end
+
+    it 'should show number of posts' do
+      visit user_posts_path(@user)
       expect(page).to have_content('Number of posts: 2')
+    end
+
+    it 'should show post title' do
+      visit user_posts_path(@user)
       expect(page).to have_text('Greetings')
+    end
+
+    it 'should show post content' do
+      visit user_posts_path(@user)
       expect(page).to have_content('How are you?')
+    end
+
+    it 'should show comment' do
+      visit user_posts_path(@user)
       expect(page).to have_content('There is no comment for this post')
+    end
+
+    it 'should show comment count' do
+      visit user_posts_path(@user)
       expect(page).to have_content('Comments: 0')
+    end
+
+    it 'should show how many likes' do
+      visit user_posts_path(@user)
       expect(page).to have_content('Likes: 0')
+    end
+
+    it 'should show pagination' do
+      visit user_posts_path(@user)
       expect(page).to have_content('Pagination')
+    end
+
+    it 'should show post when clicked' do
+      visit user_posts_path(@user)
       click_on('Salam')
       expect(page).to have_content('by Ibnballo')
     end

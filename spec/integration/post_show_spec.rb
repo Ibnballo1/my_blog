@@ -12,10 +12,30 @@ RSpec.describe 'User Post Index', type: :system do
     it 'should show all posts for a user' do
       visit user_post_path(@user, @post)
       expect(page).to have_text('Salam')
+    end
+
+    it 'should show post owner' do
+      visit user_post_path(@user, @post)
       expect(page).to have_content('Ibnballo')
+    end
+
+    it 'show how many comment' do
+      visit user_post_path(@user, @post)
       expect(page).to have_text('Comments: 2')
+    end
+
+    it 'show how many cats' do
+      visit user_post_path(@user, @post)
       expect(page).to have_content('Likes: 0')
+    end
+
+    it 'should show post' do
+      visit user_post_path(@user, @post)
       expect(page).to have_content('Assalam Alaekum brothers')
+    end
+
+    it 'should show user comment' do
+      visit user_post_path(@user, @post)
       expect(page).to have_content('Ibnballo')
     end
   end

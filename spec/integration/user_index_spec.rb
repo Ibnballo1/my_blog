@@ -11,6 +11,8 @@ RSpec.describe 'User Index', type: :system do
       expect(page).to have_content('List of all users')
       expect(page).to have_selector('img')
       expect(page).to have_content('Number of posts:')
+      click_on('Ibnballo')
+      expect(page).to have_content('Teacher')
     end
   end
 end

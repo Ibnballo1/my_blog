@@ -8,14 +8,38 @@ RSpec.describe 'User Show', type: :system do
       @post_two = Post.create(author: @user, title: 'Greetings', text: 'How are you?', comments_counter: 0, likes_counter: 0)
     end
 
-    it 'should show I can see the username of all other users' do
+    it 'should show profile image' do
       visit user_path(@user)
       expect(page).to have_selector('img')
+    end
+
+    it 'should show username of users' do
+      visit user_path(@user)
       expect(page).to have_content('Ibnballo')
+    end
+
+    it 'should show number of posts' do
+      visit user_path(@user)
       expect(page).to have_content('Number of posts:')
+    end
+
+    it 'should show user\'s Bio' do
+      visit user_path(@user)
       expect(page).to have_text('Bio')
+    end
+
+    it 'should show users post' do
+      visit user_path(@user)
       expect(page).to have_content('Salam')
+    end
+
+    it 'should show user post' do
+      visit user_path(@user)
       expect(page).to have_content('Greetings')
+    end
+
+    it 'should show all posts after clicking a button' do
+      visit user_path(@user)
       click_button('See all post')
       expect(page).to have_content('Teacher')
       expect(page).to have_content('Ibnballo')

@@ -82,6 +82,9 @@ To run the project, execute the following command:
 
 `rails s`
 
+## Run tests
+rspec spec
+
 NB: You need to create an env file for your database credentials
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

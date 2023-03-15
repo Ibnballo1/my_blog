@@ -5,17 +5,15 @@
 </head>
 <body>
   <main id='users'>
-    <h1>This page list all users</h1>
+    <h1>List of all users</h1>
+    <section id='user_box'>
     <% @users.each do |user| %>
-      <%= link_to "/users/#{user.id}" do %>
-        <section id='user_box'>
-          <img class='image' src=<%= user.photo %> alt='profile picture' />
-          <div class='user_name'>
-            <h2 class='name'><%= user.name %></h2>
-            <p class='posts_counter'>Number of posts: <%= user.posts_counter%></p>
-          </div>
-        </section>
-      <% end %>
+        <img class='image' src=<%= user.photo %> alt='profile picture' />
+        <div class='user_name'>
+          <h2 class='name'><%= link_to "#{user.name}", "/users/#{user.id}" %></h2>
+          <p class='posts_counter'>Number of posts: <%= user.posts_counter%></p>
+        </div>
+    </section>
     <% end %>
   </main>
 </body>

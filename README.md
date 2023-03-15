@@ -96,6 +96,12 @@ NB: You need to create an env file for your database credentials
 - Twitter: [@webprotekh](https://twitter.com/webprotekh)
 - LinkedIn: [Abdullateef Bello](https://www.linkedin.com/in/abdullateef-bello-1b8006228/)
 
+👤 **Robert**
+
+- GitHub: [@githubhandle](https://github.com/Alabi12)
+- Twitter: [@twitterhandle](https://twitter.com/wolo_robert)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/robert-alabi/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURE -->

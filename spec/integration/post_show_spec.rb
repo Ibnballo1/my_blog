@@ -38,5 +38,10 @@ RSpec.describe 'User Post Index', type: :system do
       visit user_post_path(@user, @post)
       expect(page).to have_content('Ibnballo')
     end
+
+    it 'should show the comment of a user' do
+      visit user_post_path(@user, @post)
+      expect(page).to have_content('Walaekum Salam')
+    end
   end
 end

@@ -21,7 +21,7 @@ RSpec.describe 'User Index', type: :system do
       expect(page).to have_content('Number of posts:')
     end
 
-    it 'should ridirect after clicking on a link' do
+    it 'should redirect after clicking on a link' do
       visit users_path
       click_on('Ibnballo')
       expect(page).to have_content('Teacher')

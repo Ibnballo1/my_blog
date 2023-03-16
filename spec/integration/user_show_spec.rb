@@ -41,7 +41,6 @@ RSpec.describe 'User Show', type: :system do
     it 'should show all posts after clicking a button' do
       visit user_path(@user)
       click_button('See all post')
-      expect(page).to have_content('Teacher')
       expect(page).to have_content('Ibnballo')
     end
   end

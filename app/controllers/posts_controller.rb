@@ -1,16 +1,14 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    # @user = User.all
-    # @users = User.find(params[:user_id])
-    # @posts = @users.posts
-    @users = User.find(params[:author_id])
+    @users = User.find(params[:user_id])
     @posts = @users.posts.includes(:comments)
-    # @users = User.includes(:posts, :comments, :likes).find_by_id(params[:user_id])
   end
 
   def show
     @post = Post.includes(:comments).find(params[:id])
-    @user = User.find(params[:author_id])
+    @user = User.find(params[:user_id])
     @comments = @post.five_most_recent_comment
   end
 

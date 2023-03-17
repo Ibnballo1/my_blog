@@ -68,12 +68,12 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'example.com',
-    user_name:            'wolo22001@gmail.com',
-    password:             '123456',
+    user_name:            'ibnballo@gmail.com',
+    password:             '@Ajibaye1990',
     authentication:       'plain',
     enable_starttls_auto: true
   }
-  
+
   config.action_mailer.perform_deliveries = true
 
   # Annotate rendered view with file names.

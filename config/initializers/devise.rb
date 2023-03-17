@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'd3d357487bb38e40111b365d82ee90500e8d7ffa8f3674e32b456d4a0319ed14f4770469619d1b7425e78819955d6860984656bb623f94d7caee7b4753b579a5'
+  # config.secret_key = '46a260ee91451190e9d8061650e01c4a8c4a48e192196f6106a4546cfbca9c4cd65b24ea6ee23299a23abebb247f7e712d62ae66d0600e42de3b3c62a5ac68f8'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '65ff5cdcc30ecb10adbbd77d53c419873b5f008f178dd827dec1662c523737022ca4badd02ad0f41bf320e1f01816dcf89473533cd1ae1a8ccd5fec0f3be97e7'
+  # config.pepper = '239a663e56d384cc13de63660d5b3368b05db67eb95708d4e047f79070ff6da30449efe8593494b1c707870c1d774766ee0acf990c9117588357dd3c224ebbfc'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -244,7 +244,9 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
+
+  config.navigational_formats = ['"/"', :html, :turbo_stream]
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -268,6 +270,7 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
+  config.mailer_sender = 'wolo22001@gmail.com'
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.

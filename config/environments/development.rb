@@ -65,12 +65,12 @@ Rails.application.configure do
   # config.i18n.raise_on_missing_translations = true
 
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'example.com',
-    user_name:            'ibnballo@gmail.com',
-    password:             '@Ajibaye1990',
-    authentication:       'plain',
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'example.com',
+    user_name: 'ibnballo@gmail.com',
+    password: '@Ajibaye1990',
+    authentication: 'plain',
     enable_starttls_auto: true
   }
 

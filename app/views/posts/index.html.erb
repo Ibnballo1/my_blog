@@ -5,10 +5,12 @@
 
   <%# Get the user %>
   <section id='user_box'>
-    <img class='image' src=<%= @users.photo %> alt='profile picture'>
-    <div class='user_name'>
-      <h1 class='name'><%= @users.name %></h1>
-      <p class='posts_counter'>Number of posts: <%= @users.posts_counter%></p>
+    <div>
+      <img class='image' src=<%= @users.photo %> alt='profile picture'>
+      <div class='user_name'>
+        <h1 class='name'><%= @users.name %></h1>
+        <p class='posts_counter'>Number of posts: <%= @users.posts_counter%></p>
+      </div>
     </div>
   </section>
 

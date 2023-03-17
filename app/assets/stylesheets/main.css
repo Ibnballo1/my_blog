@@ -8,20 +8,44 @@
   margin: 1rem;
   padding: 1rem;
   display: flex;
+  flex-direction: column;
   border: 2px solid #000;
+}
+
+#user_box div {
+  display: grid;
+  grid-template-columns: 12% 75%;
+  gap: 8%;
+  margin-bottom: 16px;
 }
 
 .image {
   border: 2px solid #000;
-  width: 6.25rem;
-  height: 6.25rem;
+  height: 8rem;
 }
 
 .user_name {
   border: 2px solid #000;
   display: flex;
   padding: 1.5rem;
-  margin-left: 3rem;
+  height: 5rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  margin: 12px 0;
+  border-radius: 5px;
+}
+
+.inputs {
+  padding: 0.25rem;
 }
 
 .posts_counter {
